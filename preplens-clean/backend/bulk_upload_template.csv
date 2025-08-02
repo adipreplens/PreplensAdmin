@@ -1,0 +1,5 @@
+text,optionA,optionB,optionC,optionD,answer,solution,subject,exam,difficulty,tags
+# Answer should be A, B, C, or D (the letter of the correct option)
+# Solution should contain the explanation or solution for the question
+What is 2 + 2?,3,4,5,6,B,The correct answer is 4. 2 + 2 = 4,Quantitative Aptitude,SSC CGL,Basic,arithmetic,math
+The capital of India is?,Mumbai,Delhi,Kolkata,Chennai,B,The capital of India is Delhi. It has been the capital since 1911 when the British moved it from Kolkata.,General Knowledge,SSC CHSL,Basic,capitals,india 
