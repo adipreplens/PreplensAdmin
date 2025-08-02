@@ -201,3 +201,4 @@ export default function Page() {
   );
 }
 // Force Netlify to rebuild with full application
+console.log('Dynamic app loaded');
