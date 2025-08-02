@@ -200,3 +200,4 @@ export default function Page() {
     </div>
   );
 }
+// Force Netlify to rebuild with full application
