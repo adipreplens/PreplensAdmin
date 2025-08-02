@@ -26,7 +26,7 @@ export default function Page() {
     const password = formData.get("password") as string;
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'https://preplensadmin.onrender.com'}/login`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'https://preplensadmin.onrender.com'}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
