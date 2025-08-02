@@ -1,13 +1,9 @@
 "use client";
-import React from 'react';
+import React from "react";
 
-type PageProps = {
-  onLogout: () => void;
-  userEmail: string;
-  token?: string | null;
-};
-
-const HomePage: React.FC<PageProps> = ({ onLogout, userEmail, token }) => {
+export default function HomePage(props: any) {
+  const { onLogout, userEmail } = props;
+  
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
@@ -23,6 +19,3 @@ const HomePage: React.FC<PageProps> = ({ onLogout, userEmail, token }) => {
       </div>
     </div>
   );
-};
-
-export default HomePage;
