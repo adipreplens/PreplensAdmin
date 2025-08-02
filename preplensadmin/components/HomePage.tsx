@@ -1,13 +1,23 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-interface HomePageProps {
-  onLogout: () => void;
-  userEmail: string;
-}
-
-export default function HomePage(props: HomePageProps) {
-  const { onLogout, userEmail } = props;
+export default function HomePage() {
+  const [userEmail, setUserEmail] = useState("");
+  
+  useEffect(() => {
+    const savedEmail = typeof window !== "undefined" ? localStorage.getItem("userEmail") : null;
+    if (savedEmail) {
+      setUserEmail(savedEmail);
+    }
+  }, []);
+  
+  const handleLogout = () => {
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("jwtToken");
+      localStorage.removeItem("userEmail");
+    }
+    window.location.reload();
+  };
   
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
@@ -17,10 +27,10 @@ export default function HomePage(props: HomePageProps) {
           Welcome to PrepLens Admin Dashboard
         </p>
         <p className="text-center text-sm text-gray-500 mt-2">
-          Logged in as: {userEmail}
+          Logged in as: {userEmail || "admin@preplens.com"}
         </p>
         <button
-          onClick={onLogout}
+          onClick={handleLogout}
           className="mt-4 w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
         >
           Logout

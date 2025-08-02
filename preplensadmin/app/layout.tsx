@@ -60,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <LoginPage onLogin={handleLogin} />
         ) : (
           <>
-            {React.cloneElement(children as React.ReactElement, { onLogout: handleLogout, userEmail, token })}
+            {children}
           </>
         )}
       </body>
